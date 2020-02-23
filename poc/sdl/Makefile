@@ -7,9 +7,9 @@ SDL_CFLAGS = `sdl2-config --cflags`
 
 CFLAGS = -Og -g
 LINK = $(CC)
-MARST = marst
 M = \
 win\
+rectangle\
 
 all: $M
 .o:; $(LINK) $< $(SDL_LDFLAGS) $(LDFLAGS) -o $@
