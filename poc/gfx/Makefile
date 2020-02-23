@@ -7,8 +7,8 @@ SDL_CFLAGS = `sdl2-config --cflags`
 
 L = libgfx.a
 O = \
-SDL2_gfxPrimitives.o\
-SDL2_rotozoom.o\
+gfxPrimitives.o\
+rotozoom.o\
 
 $L: $O; ar r $@ $O && ranlib $@
 .c.o:; $(CC) $(CFLAGS) $(SDL_CFLAGS) $< -c
