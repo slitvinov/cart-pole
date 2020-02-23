@@ -5,15 +5,19 @@
 SDL_LDFLAGS = `sdl2-config  --libs`
 SDL_CFLAGS = `sdl2-config --cflags`
 
+M_LDFLAGS = -L../gfx -lgfx -lm
+M_CFLAGS = -I../gfx
+
 CFLAGS = -Og -g
 LINK = $(CC)
 M = \
 win\
 rectangle\
+pole\
 
 all: $M
-.o:; $(LINK) $< $(SDL_LDFLAGS) $(LDFLAGS) -o $@
-.c.o:; $(CC) $(SDL_CFLAGS) $(CFLAGS) $< -c
+.o:; $(LINK) $< $(M_LDFLAGS) $(SDL_LDFLAGS) $(LDFLAGS) -o $@
+.c.o:; $(CC) $(M_CFLAGS) $(SDL_CFLAGS) $(CFLAGS) $< -c
 .c:
 %: %.c
 
