@@ -228,15 +228,3 @@ int bezierColor(SDL_Renderer *renderer, const Sint16 *vx, const Sint16 *vy,
 int bezierRGBA(SDL_Renderer *renderer, const Sint16 *vx, const Sint16 *vy,
                int n, int s, Uint8 r, Uint8 g, Uint8 b, Uint8 a);
 
-/* Characters/Strings */
-
-void gfxPrimitivesSetFont(const void *fontdata, Uint32 cw, Uint32 ch);
-void gfxPrimitivesSetFontRotation(Uint32 rotation);
-int characterColor(SDL_Renderer *renderer, Sint16 x, Sint16 y, char c,
-                   Uint32 color);
-int characterRGBA(SDL_Renderer *renderer, Sint16 x, Sint16 y, char c, Uint8 r,
-                  Uint8 g, Uint8 b, Uint8 a);
-int stringColor(SDL_Renderer *renderer, Sint16 x, Sint16 y, const char *s,
-                Uint32 color);
-int stringRGBA(SDL_Renderer *renderer, Sint16 x, Sint16 y, const char *s,
-               Uint8 r, Uint8 g, Uint8 b, Uint8 a);
