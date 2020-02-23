@@ -27,18 +27,6 @@ Andreas Schiffler -- aschiffler at ferzkopp dot net
 
 */
 
-/* ----- Versioning */
-
-#define SDL2_GFXPRIMITIVES_MAJOR 1
-#define SDL2_GFXPRIMITIVES_MINOR 0
-#define SDL2_GFXPRIMITIVES_MICRO 4
-
-/* ---- Function Prototypes */
-
-/* Note: all ___Color routines expect the color to be in format 0xRRGGBBAA */
-
-/* Pixel */
-
 int pixelColor(SDL_Renderer *renderer, Sint16 x, Sint16 y, Uint32 color);
 int pixelRGBA(SDL_Renderer *renderer, Sint16 x, Sint16 y, Uint8 r, Uint8 g,
               Uint8 b, Uint8 a);
