@@ -1,0 +1,13 @@
+block([costheta, sintheta, polemass_length, temp, thetaacc],
+    costheta: cos(theta),
+    sintheta: sin(theta),
+    polemass_length:  masspole * length,
+    temp: (force + polemass_length * theta_dot * theta_dot * sintheta) / total_mass,
+    thetaacc: (gravity * sintheta - costheta* temp) / (length * (4/3 - masspole * costheta * costheta / total_mass)),
+    ddt: thetaacc,
+    ddx: temp - polemass_length * thetaacc * costheta / total_mass);
+
+env: [theta_dot = dt, theta = t, force = F, total_mass = mp + mc, masspole = mp, gravity = g, length = l];
+
+ddx, env, mp = 1, g = 1, l = 1, infeval, radcan;
+
