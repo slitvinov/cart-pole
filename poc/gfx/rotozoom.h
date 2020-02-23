@@ -1,4 +1,4 @@
-/*  
+/*
 
 SDL2_rotozoom.c: rotozoomer, zoomer and shrinker for 32bit or 8bit surfaces
 
@@ -28,65 +28,61 @@ Andreas Schiffler -- aschiffler at ferzkopp dot net
 */
 
 #ifndef M_PI
-#define M_PI	3.1415926535897932384626433832795
+#define M_PI 3.1415926535897932384626433832795
 #endif
 
-    /* ---- Defines */
+/* ---- Defines */
 
-    /*!
-       \brief Disable anti-aliasing (no smoothing).
-     */
-#define SMOOTHING_OFF		0
+/*!
+   \brief Disable anti-aliasing (no smoothing).
+ */
+#define SMOOTHING_OFF 0
 
-    /*!
-       \brief Enable anti-aliasing (smoothing).
-     */
-#define SMOOTHING_ON		1
+/*!
+   \brief Enable anti-aliasing (smoothing).
+ */
+#define SMOOTHING_ON 1
 
-    /* ---- Function Prototypes */
+/* ---- Function Prototypes */
 
-SDL_Surface *rotozoomSurface(SDL_Surface * src, double angle, double zoom,
+SDL_Surface *rotozoomSurface(SDL_Surface *src, double angle, double zoom,
                              int smooth);
 
-SDL_Surface *rotozoomSurfaceXY
-    (SDL_Surface * src, double angle, double zoomx, double zoomy,
-     int smooth);
-
+SDL_Surface *rotozoomSurfaceXY(SDL_Surface *src, double angle, double zoomx,
+                               double zoomy, int smooth);
 
 void rotozoomSurfaceSize(int width, int height, double angle, double zoom,
                          int *dstwidth, int *dstheight);
 
-void rotozoomSurfaceSizeXY
-    (int width, int height, double angle, double zoomx, double zoomy,
-     int *dstwidth, int *dstheight);
+void rotozoomSurfaceSizeXY(int width, int height, double angle, double zoomx,
+                           double zoomy, int *dstwidth, int *dstheight);
 
-    /* 
+/*
 
-       Zooming functions
+   Zooming functions
 
-     */
+ */
 
-SDL_Surface *zoomSurface(SDL_Surface * src, double zoomx, double zoomy,
+SDL_Surface *zoomSurface(SDL_Surface *src, double zoomx, double zoomy,
                          int smooth);
 
 void zoomSurfaceSize(int width, int height, double zoomx, double zoomy,
                      int *dstwidth, int *dstheight);
 
-    /* 
+/*
 
-       Shrinking functions
+   Shrinking functions
 
-     */
+ */
 
-SDL_Surface *shrinkSurface(SDL_Surface * src, int factorx, int factory);
+SDL_Surface *shrinkSurface(SDL_Surface *src, int factorx, int factory);
 
-    /* 
+/*
 
-       Specialized rotation functions
+   Specialized rotation functions
 
-     */
+ */
 
-SDL_Surface *rotateSurface90Degrees(SDL_Surface * src,
-                                    int numClockwiseTurns);
+SDL_Surface *rotateSurface90Degrees(SDL_Surface *src, int numClockwiseTurns);
 
-    /* Ends C function definitions when using C++ */
+/* Ends C function definitions when using C++ */
