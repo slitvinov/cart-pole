@@ -10,7 +10,6 @@ main(void)
     unsigned int seconds;
     SDL_Window *window;
     SDL_Renderer *renderer;
-    SDL_Rect rectangle;
 
     if (SDL_Init(SDL_INIT_VIDEO) != 0) {
         fprintf(stderr, "%s: SDL_Init failed: %s\n", me, SDL_GetError());

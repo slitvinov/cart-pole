@@ -10,7 +10,6 @@ main(void)
     unsigned int seconds;
     SDL_Window *window;
     SDL_Renderer *renderer;
-    SDL_Rect rectangle;
     Sint16 x;
     Sint16 y;
     Sint16 rad;
