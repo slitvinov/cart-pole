@@ -11,9 +11,10 @@ M_CFLAGS = -I../gfx
 CFLAGS = -Og -g
 LINK = $(CC)
 M = \
+circle\
 win\
 rectangle\
-pole\
+polygon\
 
 all: $M
 .o:; $(LINK) $< $(M_LDFLAGS) $(SDL_LDFLAGS) $(LDFLAGS) -o $@

@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include "SDL.h"
+#include "gfxPrimitives.h"
 
 static const char *me = "rectangle";
 
@@ -34,11 +35,12 @@ main(void)
     SDL_SetRenderDrawColor(renderer, 255, 255, 255, SDL_ALPHA_OPAQUE);
     SDL_RenderClear(renderer);
     SDL_SetRenderDrawColor(renderer, 0, 0, 0, SDL_ALPHA_OPAQUE);
-    rectangle.x = 50;
-    rectangle.y = 50;
-    rectangle.w = 150;
-    rectangle.h = 150;
-    SDL_RenderFillRect(renderer, &rectangle);
+
+    int n;
+    Sint16 vx[] = { 100, 300, 200, 0 };
+    Sint16 vy[] = { 100, 200, 300, 100 };
+    n = sizeof(vx) / sizeof(*vx);
+    filledPolygonRGBA(renderer, vx, vy, n, 0, 0, 0, SDL_ALPHA_OPAQUE);
     SDL_RenderPresent(renderer);
 
     seconds = 10;

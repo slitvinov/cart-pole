@@ -1,7 +1,8 @@
 #include <stdio.h>
 #include "SDL.h"
+#include "gfxPrimitives.h"
 
-static const char *me = "rectangle";
+static const char *me = "circle";
 
 int
 main(void)
@@ -10,6 +11,9 @@ main(void)
     SDL_Window *window;
     SDL_Renderer *renderer;
     SDL_Rect rectangle;
+    Sint16 x;
+    Sint16 y;
+    Sint16 rad;
 
     if (SDL_Init(SDL_INIT_VIDEO) != 0) {
         fprintf(stderr, "%s: SDL_Init failed: %s\n", me, SDL_GetError());
@@ -30,18 +34,16 @@ main(void)
                 SDL_GetError());
         exit(2);
     }
-
     SDL_SetRenderDrawColor(renderer, 255, 255, 255, SDL_ALPHA_OPAQUE);
     SDL_RenderClear(renderer);
     SDL_SetRenderDrawColor(renderer, 0, 0, 0, SDL_ALPHA_OPAQUE);
-    rectangle.x = 50;
-    rectangle.y = 50;
-    rectangle.w = 150;
-    rectangle.h = 150;
-    SDL_RenderFillRect(renderer, &rectangle);
+    x = 200;
+    y = 200;
+    rad = 100;
+    filledCircleRGBA(renderer, x, y, rad, 0, 0, 0, SDL_ALPHA_OPAQUE);
     SDL_RenderPresent(renderer);
 
-    seconds = 10;
+    seconds = 3;
     printf("sleep for %d seconds\n", seconds);
     SDL_Delay(seconds * 1000);
     SDL_DestroyRenderer(renderer);
