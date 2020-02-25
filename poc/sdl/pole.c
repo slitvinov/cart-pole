@@ -29,11 +29,15 @@ SDL_Renderer *renderer;
 int
 main(int argc, char **argv)
 {
+    char command[999];
+    char *out;
     double length;
     double polelen;
     double polewidth;
     double scale;
+    double t;
     double world_width;
+    double x;
     double x_threshold;
     int axleoffset;
     int cartheight;
@@ -41,11 +45,8 @@ main(int argc, char **argv)
     int cartx;
     int carty;
     SDL_Window *window;
-    unsigned int seconds;
     struct Points points;
-    double x;
-    double t;
-    char *out;
+    unsigned int seconds;
 
     x = 0;
     t = 0;
@@ -86,10 +87,8 @@ main(int argc, char **argv)
 
     length = 0.5;
     x_threshold = 2.4;
-
     screen_width = 600;
     screen_height = 400;
-
     world_width = x_threshold * 2;
     scale = screen_width / world_width;
     carty = 100;
@@ -141,16 +140,9 @@ main(int argc, char **argv)
     points_translate(&points, cartx, carty);
     SetColor(.8, .6, .4);
     Polygon(&points);
-
     SetColor(.5, .5, .8);
     Circle(cartx, carty, polewidth / 2);
-
     SDL_RenderPresent(renderer);
-
-
-
-    char command[999];
-
     if (out != NULL) {
         sprintf(command, "xwd -name Window | convert xwd:- png:'%s'", out);
         if (system(command) != 0) {
