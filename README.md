@@ -8,7 +8,7 @@ Needs the GNU Scientific Library [gsl] and Simple DirectMedia Layer [sdl].
 
     $ make
 
-# libSDL
+# References
 
 - [gsl] https://www.gnu.org/software/gsl
 - [sdl] https://www.libsdl.org
